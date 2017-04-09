@@ -11,12 +11,6 @@ T = int(cases[0]) + 1
 happySide = '+'
 blankSide = '-'
 
-def isHappySide(pancake):
-	return pancake == happySide
-
-def isBlankSide(pancake):
-	return pancake == blankSide
-
 def flip(pancake):
 	if(pancake == happySide):
 		return blankSide
@@ -34,7 +28,7 @@ with open(outputFile, 'w+') as out:
 			out.write("Case #" + str(i) + ": " + str(nflips) + "\n")
 		else:
 			for j in xrange(0, len(pancakes)):
-				if(isBlankSide(pancakes[j])):
+				if(pancakes[j] == blankSide):
 					if(j + K > len(pancakes)):
 						out.write("Case #" + str(i) + ": " + "IMPOSSIBLE\n")
 						break
